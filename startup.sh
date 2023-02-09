@@ -34,5 +34,6 @@ sudo -u dcsuser cp /dcs-install.sh /home/dcsuser/dcs-install.sh
 sudo -u dcsuser cp /dcs-run.sh /home/dcsuser/dcs-run.sh
 sudo -u dcsuser mkdir /home/dcsuser/Desktop
 sudo -u dcsuser cp /DCS-Install.desktop /home/dcsuser/Desktop/DCS-Install.desktop
+sudo -u dcsuser cp /DCS-Run.desktop /home/dcsuser/Desktop/DCS-Run.desktop
 
 exec /usr/bin/supervisord -n -c /etc/supervisord.conf
