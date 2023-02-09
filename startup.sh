@@ -32,9 +32,11 @@ sed -i -e "s|%USER%|$USER|" -e "s|%HOME%|$HOME|" /etc/supervisor/supervisord.con
 PASSWORD=
 HTTP_PASSWORD=
 
-cp /xfce4-screensaver.xml /home/dcsuser/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-screensaver.xml
-cp /dcs-install.sh /home/dcsuser/dcs-install.sh
-cp /dcs-run.sh /home/dcsuser/dcs-run.sh
-cp /DCS-Install.desktop /home/dcsuser/Desktop/DCS-Install.desktop
+sudo -u dcsuser mkdir -p /home/dcsuser/.config/xfce4/xfconf/xfce-perchannel-xml
+sudo -u dcsuser cp /xfce4-screensaver.xml /home/dcsuser/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-screensaver.xml
+sudo -u dcsuser cp /dcs-install.sh /home/dcsuser/dcs-install.sh
+sudo -u dcsuser cp /dcs-run.sh /home/dcsuser/dcs-run.sh
+sudo -u dcsuser mkdir /home/dcsuser/Desktop
+sudo -u dcsuser cp /DCS-Install.desktop /home/dcsuser/Desktop/DCS-Install.desktop
 
 exec /usr/bin/supervisord -n -c /etc/supervisord.conf
