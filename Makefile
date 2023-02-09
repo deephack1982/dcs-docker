@@ -6,7 +6,7 @@ run:
 	-e USER=dcsuser  \
 	-e PASSWORD=password  \
 	-e VNC_PASSWORD=lemon123  \
-	-e RESOLUTION=1680x720   \
+	-e WORKDIR=training   \
 	-p 5900:5900 \
 	-p 10310:10310/tcp \
 	-p 10310:10310/udp \

@@ -22,6 +22,7 @@ if [ "$USER" != "root" ]; then
     [ -d "/dev/snd" ] && chgrp -R adm /dev/snd
 fi
 sed -i -e "s|%USER%|$USER|" -e "s|%HOME%|$HOME|" /etc/supervisor/supervisord.conf
+sed -i -e "s|notset|$WORKDIR|" /dcs-run.sh
 
 # clearup
 PASSWORD=
