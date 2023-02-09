@@ -1,0 +1,2 @@
+# First Run
+VNC to the docker and click cancel when asked to install mono. Wait for the wine config update to happen and then run the DCS Install script on the desktop. Untick create desktop icon and later untick start download. Let the updater self update and then install DCS. This will take a long time. Once done restart the docker and ensure that DCS starts normally. Now you can configure it and use it.
