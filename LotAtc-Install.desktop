@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=LotAtc Install
+Comment=
+Exec=/home/dcsuser/lotatc-install.sh
+Icon=
+Path=/home/dcsuser
+Terminal=true
+StartupNotify=false

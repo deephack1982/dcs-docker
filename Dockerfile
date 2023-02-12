@@ -63,8 +63,10 @@ RUN echo "dcsuser:password" | /usr/sbin/chpasswd \
 ## Add DCS scripts
 COPY dcs-install.sh /dcs-install.sh
 COPY dcs-run.sh /dcs-run.sh
+COPY lotatc-install.sh /lotatc-install.sh
 COPY DCS-Install.desktop /DCS-Install.desktop
 COPY DCS-Run.desktop /DCS-Run.desktop
+COPY LotAtc-Install.desktop /LotAtc-Install.desktop
 
 ## Disable screenlocking
 COPY xfce4-screensaver.xml /xfce4-screensaver.xml

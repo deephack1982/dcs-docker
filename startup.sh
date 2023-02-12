@@ -35,5 +35,7 @@ sudo -u dcsuser cp /dcs-run.sh /home/dcsuser/dcs-run.sh
 sudo -u dcsuser mkdir /home/dcsuser/Desktop
 sudo -u dcsuser cp /DCS-Install.desktop /home/dcsuser/Desktop/DCS-Install.desktop
 sudo -u dcsuser cp /DCS-Run.desktop /home/dcsuser/Desktop/DCS-Run.desktop
+sudo -u dcsuser cp /lotatc-install.sh /home/dcsuser/lotatc-install.sh
+sudo -u dcsuser cp /LotAtc-Install.desktop /home/dcsuser/Desktop/LotAtc-Install.desktop
 
 exec /usr/bin/supervisord -n -c /etc/supervisord.conf
