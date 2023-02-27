@@ -43,7 +43,21 @@ RUN apt update \
 
 RUN dpkg --add-architecture i386
 RUN wget -nc https://dl.winehq.org/wine-builds/winehq.key ; apt-key add winehq.key ; apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ jammy main'
-RUN apt update -y ; apt install -y --install-recommends winehq-devel
+RUN apt update -y ; apt install -y --install-recommends winehq-stable
+
+## Add Lutris
+
+RUN apt update \
+    && apt install -y python3-lxml python3-requests python3-pil python3-setproctitle \
+    python3-magic gir1.2-webkit2-4.0 gir1.2-notify-0.7 psmisc cabextract p7zip fluid-soundfont-gs \
+    unzip libmspack0 gir1.2-javascriptcoregtk-4.0 libmagic1 mime-support libimagequant0 libraqm0 \
+    libwebpmux3 python3-olefile python3-certifi python3-chardet python3-idna libjavascriptcoregtk-4.0-18 \
+    libwebkit2gtk-4.0-37 gir1.2-soup-2.4 libmagic-mgc mailcap libsoup-gnome2.4-1 \
+    && apt autoclean -y \
+    && apt autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
+RUN wget https://github.com/lutris/lutris/releases/download/v0.5.12/lutris_0.5.12_all.deb
+RUN dpkg -i lutris_0.5.12_all.deb
 
 ## Add XDoTool
 RUN apt update \

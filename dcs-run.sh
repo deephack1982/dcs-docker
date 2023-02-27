@@ -1,4 +1,4 @@
 #!/bin/bash
 WORKDIR=notset
 
-WINEDLLOVERRIDES=wbemprox=n WINEESYNC=1 WINEPREFIX=~/Games wine C:\\Program\ Files\\Eagle\ Dynamics\\DCS\ World\ OpenBeta\ Server\\bin\\DCS.exe --server --norender --quiet -w $WORKDIR
+env LUTRIS_SKIP_INIT=1 lutris lutris:rungameid/1

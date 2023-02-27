@@ -11,7 +11,7 @@ run:
 	-p 10310:10310/tcp \
 	-p 10310:10310/udp \
 	-v /dev/shm:/dev/shm  \
-	-v ~/dcs:/home/dcsuser \
+	-v dcs:/home/dcsuser \
 	--name dcsserver deephack/dcs-docker:latest
 
 push:
