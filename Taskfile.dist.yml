@@ -1,0 +1,26 @@
+version: '3'
+
+tasks:
+  build:
+    desc: Make local build of the docker image
+    cmds:
+      - docker build -t deephack/dcs-docker:modular .
+
+  run:
+    desc: Run the docker image locally for testing
+    cmds:
+      - docker run --rm 
+        -e USER=dcsuser  
+        -e PASSWORD=password  
+        -e VNC_PASSWORD=lemon123  
+        -e WORKDIR=training   
+        -p 5900:5900 
+        -p 10310:10310/tcp 
+        -p 10310:10310/udp 
+        -v /dev/shm:/dev/shm  
+        -v dcs:/home/dcsuser 
+        --name dcsserver deephack/dcs-docker:modular # Temporarily set this label to modular, should normally be latest
+  push:
+    desc: Label and push the image
+    cmds:
+      - docker push deephack/dcs-docker:modular

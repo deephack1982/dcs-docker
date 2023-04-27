@@ -1,0 +1,33 @@
+files:
+- client: https://www.digitalcombatsimulator.com/upload/iblock/ebb/2krwumwaj6vakg2gny13g1t56jral5nq/DCS_World_OpenBeta_Server_modular.exe
+game:
+  arch: win64
+  exe: drive_c/Program Files/Eagle Dynamics/DCS World OpenBeta Server/bin/DCS_updater.exe
+  prefix: $GAMEDIR
+installer:
+- task:
+    arch: win64
+    description: Creating Wine prefix
+    name: create_prefix
+    prefix: $GAMEDIR
+- task:
+    app: corefonts vcrun2017 d3dcompiler_43 win10
+    arch: win64
+    name: winetricks
+    prefix: $GAMEDIR
+- task:
+    arch: win64
+    args: /S
+    description: Installing client
+    executable: client
+    name: wineexec
+    prefix: $GAMEDIR
+- copy:
+    dst: $GAMEDIR/drive_c/Program Files/Eagle Dynamics/DCS World OpenBeta Server/
+    src: $GAMEDIR/drive_c/Program Files/Eagle Dynamics/DCS World OpenBeta Server/bin/webrtc_plugin.dll
+wine:
+  dxvk: false
+  esync: false
+  overrides:
+    riched20: n
+    wbemprox: n
