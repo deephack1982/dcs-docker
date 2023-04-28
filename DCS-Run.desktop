@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=DCS Install
+Name=DCS Run
 Comment=
 Exec=/home/dcsuser/dcs-run.sh
 Icon=

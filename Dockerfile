@@ -81,12 +81,15 @@ COPY lotatc-install.sh /lotatc-install.sh
 COPY DCS-Install.desktop /DCS-Install.desktop
 COPY DCS-Run.desktop /DCS-Run.desktop
 COPY LotAtc-Install.desktop /LotAtc-Install.desktop
+COPY dcs-world-server.yml /dcs-world-server.yml
 
 ## Disable screenlocking
 COPY xfce4-screensaver.xml /xfce4-screensaver.xml
 
 ## Config to autostart DCS
 COPY supervisord.conf /etc/supervisord.conf
+
+RUN echo "export PATH=$PATH:/usr/games" >> ~/.profile
 
 ## exposed ports
 EXPOSE 22 5900
